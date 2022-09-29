@@ -20,9 +20,9 @@ function validateInput(testInput) {
    let numInput= Number(testInput);
     if (testInput === "") {
         return "Empty";
-    } else if (isNan(Number(numInput))) {
+    } else if (isNan(numInput)) {
         return "Not a number";
-    } else if (isNan(Number(numInput) === false)) {
+    } else if (isNan(numInput) === false) {
         return "Is a number";
     }
    };
