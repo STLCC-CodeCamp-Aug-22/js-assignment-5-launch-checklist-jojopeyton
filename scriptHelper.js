@@ -21,9 +21,9 @@ function validateInput(testInput) {
     if (testInput === "") {
         return "Empty";
     } else if (isNaN(numInput)) {
-        return "Not a number";
+        return "Not a Number";
     } else if (isNaN(numInput)=== false) {
-        return "Is a number";
+        return "Is a Number";
     }
    };
 
@@ -45,6 +45,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
         else {
    pilotStatus.innerHTML = `Pilot ${pilot} is ready`;
    copilotStatus.innerHTML = `Co-pilot ${copilot} is ready`;
+   let launchStatus = document.getElementById("launchStatus");
         }
    if (Number(fuelLevel) < 10000) {
     fuelStatus.innerHTML = `Not enough fuel for journey`;
