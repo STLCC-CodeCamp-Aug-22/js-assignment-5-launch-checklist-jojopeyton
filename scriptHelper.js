@@ -43,27 +43,33 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
             alert('Please do not enter numbers for name of pilot or co-pilot');
         } 
         else {
+            list.style.visibility = 'visible';
    pilotStatus.innerHTML = `Pilot ${pilot} is ready`;
    copilotStatus.innerHTML = `Co-pilot ${copilot} is ready`;
    let launchStatus = document.getElementById("launchStatus");
-        }
-   if (Number(fuelLevel) < 10000) {
+
+   if (fuelLevel < 10000 && cargoLevel <= 10000) {
     fuelStatus.innerHTML = `Not enough fuel for journey`;
-    list.style.visibility = `visible`;
     launchStatus.innerHTML = `Shuttle not ready for launch`;
     launchStatus.style.color = `red`;
-   } else if (Number(cargoLevel) > 10000) {
-    list.style.visibility = `visible`;
-    cargoStatus.innerHTML = `Too much mass for take off`;
+   } else if (fuelLevel >= 10000 && cargoLevel < 10000) {
+    cargoStatus.innerHTML = 'Cargo level are good';
+    fuelStatus.innerHTML = 'Fuel levels are good';
     launchStatus.innerHTML = `Shuttle not ready for launch`;
     launchStatus.style.color = `red`;
-   } else {
-    list.style.visibility = `visible`;
+   } else if (fuelLevel < 10000 && cargoLevel > 10000) {
+    cargoStatus.innerHTML = 'Too much mass for take off';
+    fuelStatus.innerHTML = 'Not enough fuel for journey';
+    launchStatus.innerHTML = 'Shuttle not ready for launch';
+    launchStatus.style.color = 'red';
+   }
+    else {
     fuelStatus.innerHTML = `Fuel levels are good`;
     cargoStatus.innerHTML = `Cargo mass is good`;
     launchStatus.innerHTML = `Shuttle is ready for launch`;
     launchStatus.style.color = `green`;
    }
+}
 }
 
 async function myFetch() {
