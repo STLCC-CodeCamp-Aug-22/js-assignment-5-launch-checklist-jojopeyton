@@ -49,14 +49,14 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
    let launchStatus = document.getElementById("launchStatus");
 
    if (fuelLevel < 10000 && cargoLevel <= 10000) {
-    fuelStatus.innerHTML = `Not enough fuel for journey`;
-    launchStatus.innerHTML = `Shuttle not ready for launch`;
-    launchStatus.style.color = `red`;
+    fuelStatus.innerHTML = 'Not enough fuel for journey';
+    launchStatus.innerHTML = 'Shuttle not ready for launch';
+    launchStatus.style.color = 'red';
    } else if (fuelLevel >= 10000 && cargoLevel < 10000) {
     cargoStatus.innerHTML = 'Cargo level are good';
     fuelStatus.innerHTML = 'Fuel levels are good';
-    launchStatus.innerHTML = `Shuttle not ready for launch`;
-    launchStatus.style.color = `red`;
+    launchStatus.innerHTML = 'Shuttle not ready for launch';
+    launchStatus.style.color = 'red';
    } else if (fuelLevel < 10000 && cargoLevel > 10000) {
     cargoStatus.innerHTML = 'Too much mass for take off';
     fuelStatus.innerHTML = 'Not enough fuel for journey';
@@ -64,10 +64,10 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
     launchStatus.style.color = 'red';
    }
     else {
-    fuelStatus.innerHTML = `Fuel levels are good`;
-    cargoStatus.innerHTML = `Cargo mass is good`;
-    launchStatus.innerHTML = `Shuttle is ready for launch`;
-    launchStatus.style.color = `green`;
+    fuelStatus.innerHTML = 'Fuel levels are good';
+    cargoStatus.innerHTML = 'Cargo mass is good';
+    launchStatus.innerHTML = 'Shuttle is ready for launch';
+    launchStatus.style.color = 'green';
    }
 }
 }
